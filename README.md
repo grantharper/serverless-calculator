@@ -4,7 +4,7 @@ This application was created to experiment with the [serverless](https://serverl
 
 Assuming you have your AWS CLI credentials setup correctly, you can follow the steps below to deploy this function.
 
-Deployment
+Deploy the function
 
 `serverless deploy -v`
 
