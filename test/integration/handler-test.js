@@ -7,21 +7,19 @@ const chai = require('chai'),
 describe('handler - integration test', function () {
   it('should add provided numbers and provide success response object', function () {
     let event = {
-      operation: 'add',
-      num1: 12,
-      num2: 14
+      body: "{\"operation\": \"add\", \"num1\": 2, \"num2\": 3}"
     };
     handler.calculate(event, context, function (err, response) {
       //console.log(response);
       response.statusCode.should.equal(200);
       let body = JSON.parse(response.body);
-      body.result.should.equal(event.num1 + event.num2);
+      body.result.should.equal(5);
 
     });
   });
   it('should provide failure response object', function () {
     let event = {
-      garbage: 'garbage'
+      body: "{\"garbage\": \"garbage\"}"
     };
     handler.calculate(event, context, function (err, response) {
 

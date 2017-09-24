@@ -1,5 +1,3 @@
 {
-  "operation": "add",
-  "num1": 2,
-  "num2": 3
+  "body": "{\"operation\": \"add\", \"num1\": 2, \"num2\": 3}"
 }

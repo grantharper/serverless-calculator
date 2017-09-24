@@ -13,9 +13,7 @@ describe('handler - unit test', function () {
     //this makes it so the callback will return this information instead of actually calling the function
     mainStub.callsArgWith(1, null, {result: 90});
     let event = {
-      operation: 'add',
-      num1: 12,
-      num2: 14
+      body: "{\"operation\": \"add\", \"num1\": 2, \"num2\": 3}"
     };
     handler.calculate(event, context, function (err, response) {
       should.not.exist(err);
@@ -34,7 +32,7 @@ describe('handler - unit test', function () {
 
     mainStub.callsArgWith(1, new Error('invalid'));
     let event = {
-      garbage: 'garbage'
+      body: "{\"operation\": \"add\", \"num1\": 2, \"num2\": 3}"
     };
     handler.calculate(event, context, function(err, response){
       should.exist(err);

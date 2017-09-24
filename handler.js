@@ -2,14 +2,10 @@
 
 const main = require('./src/main');
 
-//expected input for event
-//event.operation = (add|subtract)
-//event.num1 = 12
-//event.num2 = 14
-//function will perform calculation
-
 module.exports.calculate = (event, context, callback) => {
-  main.execute(event, function (err, output) {
+  console.log(event);
+  let eventBody = JSON.parse(event.body);
+  main.execute(eventBody, function (err, output) {
     let response = {};
     if (err) {
       response.statusCode = 500;

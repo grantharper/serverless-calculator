@@ -15,3 +15,7 @@ Invoke the function and view the output in the console
 You should see the following output
 
 `{"statusCode": 200, "body": "{\"result\":5}"}`
+
+The function should also be exposed via the API Gateway at a url that was provided to you during the stack creation. To invoke this endpoint, you can use the curl command below
+
+`curl -X POST -d @test/external/api-gateway-test.json https://<your-endpoint-here>/dev/calculate --header "Content-Type:application/json"`
